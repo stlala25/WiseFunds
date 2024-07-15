@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WiseFund Index</title>
+    <title>Wise Funds NAV History</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,38 +51,49 @@
         a:hover {
             text-decoration: underline;
         }
+        .form-container {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .form-container select, .form-container input {
+            padding: 10px;
+            margin: 5px 0;
+            width: calc(50% - 12px);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #555;
+            color: #fff;
+        }
+        .form-container .note {
+            color: #ccc;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Mutual Funds NAV History</h1>
+        <h1>Wise Funds NAV History</h1>
     </div>
     <div class="container">
-        <div class="section">
-            <h2>About WiseFund</h2>
-            <p>WiseFund is dedicated to providing sustainable investment opportunities. Our mission is to create value for our investors while making a positive impact on the environment and society.</p>
-        </div>
-        <div class="section">
-            <h2>Services</h2>
-            <ul>
-                <li><a href="#investment-strategies">Investment Strategies</a></li>
-                <li><a href="#portfolio-management">Portfolio Management</a></li>
-                <li><a href="#research-analysis">Research & Analysis</a></li>
-                <li><a href="#client-advisory">Client Advisory</a></li>
-            </ul>
-        </div>
-        <div class="section">
-            <h2>Projects</h2>
-            <ul>
-                <li><a href="#renewable-energy">Renewable Energy</a></li>
-                <li><a href="#sustainable-agriculture">Sustainable Agriculture</a></li>
-                <li><a href="#green-buildings">Green Buildings</a></li>
-                <li><a href="#community-development">Community Development</a></li>
-            </ul>
-        </div>
-        <div class="section">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or would like more information, please <a href="mailto:info@wisefund.com">contact us</a>.</p>
+        <div class="form-container">
+            <h2>Nav History</h2>
+            <p>(in text format)</p>
+            <form>
+                <label for="mutual-fund">Select Mutual Fund</label>
+                <select id="mutual-fund" name="mutual-fund">
+                    <option>--Select Mutual Fund--</option>
+                </select>
+                <label for="type">Select Type</label>
+                <select id="type" name="type">
+                    <option>--Select Type--</option>
+                </select>
+                <label for="from-date">From Date</label>
+                <input type="date" id="from-date" name="from-date" value="2024-07-12">
+                <label for="to-date">To Date</label>
+                <input type="date" id="to-date" name="to-date">
+                <p class="note">Note: One can download historical NAV for a maximum period of 90 days at a time</p>
+            </form>
         </div>
     </div>
     <div class="footer">
