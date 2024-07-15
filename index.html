@@ -12,30 +12,52 @@
             background-color: #000;
             color: #fff;
         }
-        .header {
+       .header {
             background-color: #000;
             color: #fff;
             padding: 20px;
             text-align: center;
         }
-        .header h1 {
+       .header h1 {
             font-family: Calibri, sans-serif;
             font-style: italic;
             font-size: 32px;
         }
-        .container {
+       .container {
             padding: 20px;
         }
-        .section {
+       .form-container,.history-container {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 5px;
             margin-bottom: 20px;
         }
-        .section h2 {
+       .form-container select,.form-container input,.history-container select,.history-container input {
+            padding: 10px;
+            margin: 5px 0;
+            width: calc(50% - 12px);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #555;
             color: #fff;
         }
-        .section p {
+       .form-row,.form-row-right {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+       .form-row label,.form-row-right label {
+            flex: 1;
+            margin-right: 10px;
             color: #ccc;
         }
-        .footer {
+       .form-row select,.form-row input,.form-row-right select,.form-row-right input {
+            flex: 2;
+        }
+       .form-row-right select {
+            margin-left: 10px;
+        }
+       .footer {
             background-color: #000;
             color: #fff;
             text-align: center;
@@ -51,36 +73,18 @@
         a:hover {
             text-decoration: underline;
         }
-        .form-container {
-            background-color: #333;
-            padding: 20px;
-            border-radius: 5px;
+       .csv-button {
+            background-color: #fff;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 50%;
+            margin-left: 10px;
         }
-        .form-container select, .form-container input {
-            padding: 10px;
-            margin: 5px 0;
-            width: calc(50% - 12px);
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: #555;
-            color: #fff;
-        }
-        .form-container .note {
-            color: #ccc;
-            font-size: 14px;
-        }
-        .form-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .form-row label {
-            flex: 1;
-            margin-right: 10px;
-            color: #ccc;
-        }
-        .form-row select, .form-row input {
-            flex: 2;
+       .csv-button:hover {
+            background-color: #ccc;
         }
     </style>
 </head>
@@ -90,8 +94,7 @@
     </div>
     <div class="container">
         <div class="form-container">
-            <h2>Nav History</h2>
-            <p>(in text format)</p>
+            <h2>Nav History <button class="csv-button">CSV</button></h2>
             <form>
                 <div class="form-row">
                     <label for="mutual-fund">Select Mutual Fund</label>
@@ -105,16 +108,22 @@
                         <option>--Select Type--</option>
                     </select>
                 </div>
-                <div class="form-row">
+                <div class="form-row-right">
                     <label for="from-date">From Date</label>
                     <input type="date" id="from-date" name="from-date" value="2024-07-12">
-                </div>
-                <div class="form-row">
                     <label for="to-date">To Date</label>
                     <input type="date" id="to-date" name="to-date">
+                </div>
+            </form>
+        </div>
+        <div class="history-container">
+            <h2>Recorded History</h2>
+            <!-- Placeholder for recorded history content -->
+            <p>No history recorded yet.</p>
+        </div>
     </div>
     <div class="footer">
-        <p>&copy; 2024 WiseFund. All rights reserved.</p>
+        <p>&copy; <a href="https://www.wisefunds.in/" target="_blank">2024 WiseFund</a>. All rights reserved.</p>
     </div>
 </body>
 </html>
