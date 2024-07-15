@@ -41,27 +41,20 @@
             background-color: #555;
             color: #fff;
         }
-        .form-row {
+        .form-row, .form-row-right {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .form-row label {
+        .form-row label, .form-row-right label {
             flex: 1;
             margin-right: 10px;
             color: #ccc;
         }
-        .form-row select, .form-row input {
+        .form-row select, .form-row input, .form-row-right select, .form-row-right input {
             flex: 2;
-        }
-        .form-row-right {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 10px;
         }
         .form-row-right select {
-            flex: 2;
             margin-left: 10px;
         }
         .footer {
@@ -98,15 +91,16 @@
                     </select>
                 </div>
                 <div class="form-row">
-                    <label for="from-date">From Date</label>
-                    <input type="date" id="from-date" name="from-date" value="2024-07-12">
-                </div>
-                <div class="form-row-right">
-                    <label for="to-date">To Date</label>
-                    <input type="date" id="to-date" name="to-date">
+                    <label for="type">Select Type</label>
                     <select id="type" name="type">
                         <option>--Select Type--</option>
                     </select>
+                </div>
+                <div class="form-row-right">
+                    <label for="from-date">From Date</label>
+                    <input type="date" id="from-date" name="from-date" value="2024-07-12">
+                    <label for="to-date">To Date</label>
+                    <input type="date" id="to-date" name="to-date">
                 </div>
             </form>
         </div>
