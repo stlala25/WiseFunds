@@ -69,6 +69,19 @@
             color: #ccc;
             font-size: 14px;
         }
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .form-row label {
+            flex: 1;
+            margin-right: 10px;
+            color: #ccc;
+        }
+        .form-row select, .form-row input {
+            flex: 2;
+        }
     </style>
 </head>
 <body>
@@ -80,21 +93,25 @@
             <h2>Nav History</h2>
             <p>(in text format)</p>
             <form>
-                <label for="mutual-fund">Select Mutual Fund</label>
-                <select id="mutual-fund" name="mutual-fund">
-                    <option>--Select Mutual Fund--</option>
-                </select>
-                <label for="type">Select Type</label>
-                <select id="type" name="type">
-                    <option>--Select Type--</option>
-                </select>
-                <label for="from-date">From Date</label>
-                <input type="date" id="from-date" name="from-date" value="2024-07-12">
-                <label for="to-date">To Date</label>
-                <input type="date" id="to-date" name="to-date">
-                <p class="note">Note: One can download historical NAV for a maximum period of 90 days at a time</p>
-            </form>
-        </div>
+                <div class="form-row">
+                    <label for="mutual-fund">Select Mutual Fund</label>
+                    <select id="mutual-fund" name="mutual-fund">
+                        <option>--Select Mutual Fund--</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="type">Select Type</label>
+                    <select id="type" name="type">
+                        <option>--Select Type--</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="from-date">From Date</label>
+                    <input type="date" id="from-date" name="from-date" value="2024-07-12">
+                </div>
+                <div class="form-row">
+                    <label for="to-date">To Date</label>
+                    <input type="date" id="to-date" name="to-date">
     </div>
     <div class="footer">
         <p>&copy; 2024 WiseFund. All rights reserved.</p>
